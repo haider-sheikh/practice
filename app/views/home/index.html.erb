@@ -1,2 +1,6 @@
-<h1>Home#index</h1>
-<p>Its <%= @time%></p>
+<h1 align="center">Home#index</h1>
+<h2 align="center">Welcome <%= @name %> to  Ruby on Rails</h2>
+<p> What you want to do? </p>
+<br>
+<%= link_to 'Create User', new_user_path %>
+<%= link_to 'List All Users', all_user_path %>
