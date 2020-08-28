@@ -5,6 +5,9 @@ class HomeController < ApplicationController
 
   def new
     @user = User.new
+    respond_to do |format|
+      format.js    
+    end
   end
 
   def create
@@ -14,6 +17,9 @@ class HomeController < ApplicationController
 
   def all_users
     @users = User.all
+    respond_to do |format|
+      format.js
+    end
   end
 
   def show
