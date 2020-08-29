@@ -5,21 +5,24 @@ class HomeController < ApplicationController
 
   def new
     @user = User.new
-    respond_to do |format|
-      format.js    
-    end
+    # respond_to do |format|
+    #   format.js
+    # end
   end
 
   def create
-    User.create(params.require(:user).permit(:name, :email))
-    redirect_to root_path
+    @user = User.new(params.require(:user).permit(:name, :email))
+    # respond_to do |format|
+      @result = @user.save
+    #   format.js
+    # end
   end
 
   def all_users
     @users = User.all
-    respond_to do |format|
+    # respond_to do |format|
       format.js
-    end
+    # end
   end
 
   def show
